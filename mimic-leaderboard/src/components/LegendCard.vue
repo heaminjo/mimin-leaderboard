@@ -96,7 +96,7 @@ const rankImg = [rank01, rank02, rank03, rank04, rank05]
 
     .nickname{
         p{
-            font-size: 17px;
+            font-size: 23px;
             font-weight: bold;
             text-align: center;
             color: #A80014;
