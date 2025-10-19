@@ -19,7 +19,7 @@ const rankImg = [rank01, rank02, rank03, rank04, rank05]
 </script>
 
 <template>
-    <section>
+    <section class="legend-section">
         <div class="rank-img">
             <img :src='rankImg[user.ranking - 1]' alt="랭크 이미지">
         </div>
@@ -44,9 +44,9 @@ const rankImg = [rank01, rank02, rank03, rank04, rank05]
 </template>
 
 <style>
-    section{
-        width: 190px;
-        height: 290px;
+    .legend-section{
+        width: 230px;
+        height: 320px;
         background-color: #FFEEEE;
         border-radius: 20px;
         border: solid 4px #A80014;
@@ -108,6 +108,6 @@ const rankImg = [rank01, rank02, rank03, rank04, rank05]
         display: flex;
         padding: 10px;
         justify-content: center;
-        align-items: center;
+        margin-top: 20px;
     }
 </style>

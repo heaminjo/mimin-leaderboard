@@ -57,4 +57,7 @@ const badgeMap: Record<string, string> = {
         height: auto;
         width: 10;
     }
+    .score span{
+        color: #000;
+    }
 </style>

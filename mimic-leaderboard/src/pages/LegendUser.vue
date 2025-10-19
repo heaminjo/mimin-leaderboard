@@ -2,6 +2,9 @@
 import type { User } from '../components/data';
 import LegendCard from '../components/LegendCard.vue';
 import mimicSymbol from '../../public/심볼형_1.png'
+import mimicLogo from '../../public/기본형_1.png'
+import legendLogo from '../../public/b57d10d842cb6fe89e19df65bbfd20506aecf9c9.png'
+
 
 const data = [
     {
@@ -130,13 +133,13 @@ const data = [
 
 <template>
 <div class="legend-container">
-  <header>
-    <div class="title">
-      <img id="mimic-logo" src="../../public/기본형_1.png" alt="MIMIC 로고">
-      <img id="legend-logo" src="../../public/b57d10d842cb6fe89e19df65bbfd20506aecf9c9.png" alt="LEGEND 로고">
+  <header class="legend-header">
+    <div class="legend-title">
+      <img id="mimic-logo" :src="mimicLogo" alt="MIMIC 로고">
+      <img id="legend-logo" :src="legendLogo" alt="LEGEND 로고">
     </div>
   </header>
-  <main>
+  <main class="legend-main">
     <div class="card-list">
       <div
           v-for="(user, index) in data"
@@ -147,7 +150,7 @@ const data = [
         </div>
       </div>
   </main>
-  <footer>
+  <footer class="legend-footer">
     <img :src="mimicSymbol" alt="">
   </footer>
 </div>
@@ -156,26 +159,26 @@ const data = [
 <style>
 
 /* header */
-  header{ 
-    height: 180px;
+  .legend-header{ 
+    height: 350px;
   }
 
-  .title{
+  .legend-title{
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
   }
 
   #mimic-logo{
-    width: 280px;
+    width: 426px;
     height: auto;
   }
 
 /* main */
   #legend-logo{
-    width: 300px;
+    width: 500px;
     height: auto;
   }
   .card-list{
@@ -187,12 +190,12 @@ const data = [
   }
 
 /* footer*/
-  footer{
+  .legend-footer{
     display: flex;
     justify-content: center;
   }
 
-  footer img{
+  .legend-footer img{
     width: 100px;
     height: auto;
     margin-top: 30px;
