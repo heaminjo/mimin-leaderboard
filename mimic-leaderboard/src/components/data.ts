@@ -5,11 +5,4 @@ export interface User{
     ranking: number
     mscore: number
     tier: string
-    mscores: Mscores[]
-}
-
-export interface Mscores{
-    ranking: number
-    scoreGroup: string
-    mscore: number  
 }

@@ -7,166 +7,6 @@ import type { User } from '../components/data';
 const props = defineProps<{
   users: User[]
 }>()
-
-const data = [
-    {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "ranking": 6,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 7,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 8,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 9,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 10,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 11,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "ranking": 12,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 13,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 14,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 15,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 16,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 17,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "ranking": 18,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 19,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 20,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 21,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 22,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 23,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "ranking": 24,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        },
-        {
-            "accountId": "8sla79r554",
-            "nickname": "테스트",
-            "profileUrl": "/user/profile/2025081003353447143ba.bin",
-            "ranking": 25,
-            "mscore": 40.923,
-            "tier": "DIAMOND"
-        }
-]
-
 </script>
 
 <template>
@@ -177,10 +17,10 @@ const data = [
     </div>
   </header>
   <main class="diamond-main">
-     <div class="card-grid">
+    <div class="card-grid">
     <div
       class="player-card"
-      v-for="(user, index) in data"
+      v-for="(user, index) in props.users"
       :key="index"
     >
      <DiamondCard :user="user"/>
@@ -192,9 +32,14 @@ const data = [
 
 <style>
 
+.diamond-container{
+    width: 1920px;
+    height: 1080px;
+}
+
 /* header */
   .diamond-header{ 
-    height: 220px;
+    height: 267px;
   }
 
   .diamond-title{
@@ -202,25 +47,28 @@ const data = [
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
 }
 
   #diamond-logo{
-    width: 584px;
-    height: 124px;
+  width: 584px;
+  height: 124px;
+  flex-shrink: 0;
+  aspect-ratio: 146/31;
   }
 
 /* main   */
-
+  .diamond-main{
+    height: calc(100% - 267px);
+  }
   .card-grid {
-  width: 1600px;
+  width: calc(1980px - 414px);
   margin: 0 auto;
   display: grid;
    grid-template-columns: repeat(5, 1fr); /* 가로 5개 */
   grid-template-columns: repeat(4, 1fr); /* 한 줄에 5개 */
-  gap: 20px; /* 카드 간격 */
+  row-gap: 47px;
+  column-gap: 60px; /* 카드 간격 */
   justify-items: center;
-  align-items: start;
-  padding: 20px;
+  align-items: center;
 }
 </style>

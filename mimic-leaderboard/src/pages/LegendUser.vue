@@ -8,144 +8,24 @@ import legendLogo from '../../public/b57d10d842cb6fe89e19df65bbfd20506aecf9c9.pn
 const props = defineProps<{
   users: User[]
 }>()
-
-const data = [
-    {
-    "accountId": "8sla79r554",
-        "nickname": "테스트",
-        "profileUrl": "/user/profile/2025081003353447143ba.bin",
-        "ranking": 1,
-        "mscore": 40.923,
-        "tier": "LEGEND",
-        "mscores": [{
-                "ranking": 1,
-                "scoreGroup": "MAIN", 
-                "mscore": 42.1
-            }, {
-                "ranking": 1,
-                "scoreGroup": "LIGHT", 
-                "mscore": 56.5
-            }, {
-                "ranking": 1,
-                "scoreGroup": "BLITZ", 
-                "mscore": 24.1
-            }, {
-                "ranking": 1,
-                "scoreGroup": "CLASSIC", 
-                "mscore": 52.2
-            }],
-    },{
-    "accountId": "8sla79r554",
-        "nickname": "테스트",
-        "profileUrl": "/user/profile/2025081003353447143ba.bin",
-        "ranking": 2,
-        "mscore": 40.923,
-        "tier": "LEGEND",
-        "mscores": [{
-                "ranking": 1,
-                "scoreGroup": "MAIN", 
-                "mscore": 65.1
-            }, {
-                "ranking": 1,
-                "scoreGroup": "LIGHT", 
-                "mscore": 90.3
-            }, {
-                "ranking": 1,
-                "scoreGroup": "BLITZ", 
-                "mscore": 80.5
-            }, {
-                "ranking": 1,
-                "scoreGroup": "CLASSIC", 
-                "mscore": 70.2
-            }],
-    },{
-    "accountId": "8sla79r554",
-        "nickname": "테스트",
-        "profileUrl": "/user/profile/2025081003353447143ba.bin",
-        "ranking": 3,
-        "mscore": 40.923,
-        "tier": "LEGEND",
-        "mscores": [{
-                "ranking": 1,
-                "scoreGroup": "MAIN", 
-                "mscore": 30.2
-            }, {
-                "ranking": 1,
-                "scoreGroup": "LIGHT", 
-                "mscore": 50.1
-            }, {
-                "ranking": 1,
-                "scoreGroup": "BLITZ", 
-                "mscore": 15.1
-            }, {
-                "ranking": 1,
-                "scoreGroup": "CLASSIC", 
-                "mscore": 64.1
-            }],
-    },{
-    "accountId": "8sla79r554",
-        "nickname": "테스트",
-        "profileUrl": "/user/profile/2025081003353447143ba.bin",
-        "ranking": 4,
-        "mscore": 40.923,
-        "tier": "LEGEND",
-        "mscores": [{
-                "ranking": 1,
-                "scoreGroup": "MAIN", 
-                "mscore": 30.2
-            }, {
-                "ranking": 1,
-                "scoreGroup": "LIGHT", 
-                "mscore": 50.1
-            }, {
-                "ranking": 1,
-                "scoreGroup": "BLITZ", 
-                "mscore": 15.1
-            }, {
-                "ranking": 1,
-                "scoreGroup": "CLASSIC", 
-                "mscore": 64.1
-            }],
-    },{
-    "accountId": "8sla79r554",
-        "nickname": "테스트",
-        "profileUrl": "/user/profile/2025081003353447143ba.bin",
-        "ranking": 5,
-        "mscore": 40.923,
-        "tier": "LEGEND",
-        "mscores": [{
-                "ranking": 1,
-                "scoreGroup": "MAIN", 
-                "mscore": 30.1
-            }, {
-                "ranking": 1,
-                "scoreGroup": "LIGHT", 
-                "mscore": 50.1
-            }, {
-                "ranking": 1,
-                "scoreGroup": "BLITZ", 
-                "mscore": 15.2
-            }, {
-                "ranking": 1,
-                "scoreGroup": "CLASSIC", 
-                "mscore": 64.3
-            }],
-    }
-]
 </script>
 
 <template>
 <div class="legend-container">
   <header class="legend-header">
     <div class="legend-title">
-      <img id="mimic-logo" :src="mimicLogo" alt="MIMIC 로고">
-      <img id="legend-logo" :src="legendLogo" alt="LEGEND 로고">
+      <div class="mimic-logo">
+        <img :src="mimicLogo" alt="MIMIC 로고">
+      </div>
+      <div class="legend-logo">
+         <img :src="legendLogo" alt="LEGEND 로고">
+      </div>
     </div>
   </header>
   <main class="legend-main">
     <div class="card-list">
       <div
-          v-for="(user, index) in data"
+          v-for="(user, index) in props.users"
           :key="user.accountId + index"
           class="user-card"
         >
@@ -161,9 +41,14 @@ const data = [
 
 <style>
 
+  .legend-container{
+    width: 1920px;
+    height: 1080px;
+  }
+
 /* header */
   .legend-header{ 
-    height: 350px;
+    height: 435px;
   }
 
   .legend-title{
@@ -174,33 +59,44 @@ const data = [
     justify-content: center;
   }
 
-  #mimic-logo{
-    width: 426px;
-    height: auto;
+
+  /* 로고  */
+  .mimic-logo{
+    width: 426.789px;
+    height: 124px;
   }
 
-/* main */
-  #legend-logo{
+  .legend-logo{
     width: 500px;
-    height: auto;
+    height: 124px;
+  }
+
+  .mimic-logo img,
+  .legend-logo img{
+    width: 100%;
+    height: 100%;
+  }
+/* main */
+  .legend-main{
+    height: 375px;
   }
   .card-list{
     height: 400px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 60px;
+    column-gap: 87px;
   }
 
 /* footer*/
   .legend-footer{
     display: flex;
+    height: 270px;
     justify-content: center;
   }
 
   .legend-footer img{
-    width: 100px;
-    height: auto;
-    margin-top: 70px;
+    width: 98.421px;
+    height: 79px;
+    margin-top: 121px;
   }
 </style>

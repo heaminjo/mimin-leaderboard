@@ -31,10 +31,11 @@ const rankImg = [rank01, rank02, rank03, rank04, rank05]
                 </div>
             </div>
             <div class="nickname">
-                <p>{{ user.nickname }}</p>
+                <span>{{ user.nickname }}</span>
             </div>
             <div class="mscore">
-                <MscoreCard :mscores="user.mscores"/>
+                <span class="label">MSCORE</span>
+                <span class="value">{{user.mscore}}</span>
             </div>
             <div class="symbol">
                 <img :src="mimicSymbol2" alt="">
@@ -45,30 +46,41 @@ const rankImg = [rank01, rank02, rank03, rank04, rank05]
 
 <style>
     .legend-section{
-        width: 230px;
-        height: 320px;
-        background-color: #FFEEEE;
+        width: 267px;
+        height: 375px;
+        border-radius: 25px;
+        border: 4px solid #A80014;
+        background: #FEE;
+        box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 0.15);
         border-radius: 20px;
-        border: solid 4px #A80014;
         position: relative;
-        padding: 20px;
+        padding: 36px 40px 24px;
+        box-sizing: border-box;
     }
     .rank-img img{
-        width: 80px;
+        width: 94px;
+        height: 47px;
         position: absolute;
         left: 15px;
         top: -30px;
     }
 
+    .user-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 /* profile */
     .profile{
         display: flex;
+        width: 185.249px;
+        height: 181.517px;
         justify-content: center;
         position: relative;
-        padding: 20px 0;
     }
     .profile img{
-        width: 140px;
+        width: 100%;
         height: auto;
         background-color: #000;
         border-radius: 100%;
@@ -76,38 +88,69 @@ const rankImg = [rank01, rank02, rank03, rank04, rank05]
 
 /* tier  */
     .tier{
+        width: 129.274px;
+        height: 32.61px;
         position: absolute;
         z-index: 10;
         background-color: #A80014;
         border-radius: 15.5px;
-        width: 111px;
-        height: 28px;
         text-align: center;
         line-height: 28px;
         color: #fff;
         font-weight: bold;  
-        bottom: 10px;
+        bottom: -11.9px;
     }
 
 /* nickname*/
     .nickname{
-        margin-bottom: 7px;
+        display: flex;
+        align-items: center;
+        height: 66.92px;
     }
-
     .nickname{
-        p{
-            font-size: 23px;
-            font-weight: bold;
+        span{
+           color: #A80014;
             text-align: center;
-            color: #A80014;
+            font-family: Pretendard;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+            letter-spacing: 1.25px;
         }
     }
 
+/* mscore  */
+.mscore{
+    width: 123px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.mscore .label{
+color: #000;
+text-align: center;
+font-family: Pretendard;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.mscore .value{
+color: #000;
+font-family: Pretendard;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
 /* symbol*/
     .symbol{
         display: flex;
-        padding: 10px;
-        justify-content: center;
-        margin-top: 20px;
+        height: 44px;
+        align-items: end;
     }
 </style>

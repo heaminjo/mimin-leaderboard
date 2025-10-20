@@ -29,12 +29,14 @@ const props = defineProps<{
 
 <style>
     section{
-        width: 300px;
-        height: 80px;
-        padding: 10px 15px;
-        background-color: #3F3F3F;
+        width: 328px;
+        height: 100px;
+        box-sizing: border-box;
+        padding: 18px 15px 22px 19px;
         border-radius: 20px;
-        border: solid 2px #FFFFFF;
+        border: 2px solid #FFF;
+        background: rgba(255, 255, 255, 0.15);
+
     }
 
 /* ranking */
@@ -43,34 +45,59 @@ const props = defineProps<{
     justify-content: space-between;
 }
 span{
-    color: #fff;
+    color: #FFF;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
 }
 
 span b{
+    font-family: Pretendard;
     font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px; /* 84% */
 }
 
 .d-tier{
-    width: 98px;
-    height: 25px;
-    background-color: #33B7FF;
+    width: 98.668px;
+    height: 25.695px;
     border-radius: 12px;
+    background: #2EB9FF;
     text-align: center;
 }
 
 /* info */
 .info{
     display: flex;
-    margin-top: 7px;
+    margin-top: 13px;
     justify-content: space-between;
 }
 
+.d-nickname{
+    width: 171px;
+    height: 23px;
+}
+
 .d-nickname span{
+    color: #FFF;
+    font-family: Pretendard;
     font-size: 23px;
-    font-weight: bold;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px; /* 84% */
+}
+
+.d-mscore{
+    width: 73px;
+    height: 23px;
 }
 .d-mscore span{
     font-size: 25px;
     font-weight: bold;
+    display: inline-block;
 }
 </style>

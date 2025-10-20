@@ -17,10 +17,20 @@ const legendUsers = ref<User[]>([])
 const diamondUsers = ref<User[]>([])
 
 const fetchLeaderBoard = async () => {
-  await axios.get(`${API}/leaderboard`)
+  await axios.get(`${API}/mscore/ranking`,{
+    params: {
+      page: 0,
+      size: 25,
+      scoreGroup: 'MAIN'
+    }}
+  )
   .then(res => {
-     legendUsers.value = res.data.legendUsers
-     diamondUsers.value = res.data.diamondUsers 
+    console.log(res.data.list)
+
+    legendUsers.value = res.data.list.filter((user: any) => user.tier === 'LEGEND')
+    diamondUsers.value = res.data.list.filter((user: any) => user.tier === 'DIAMOND')
+
+    console.log(legendUsers)
   })
 }
 
@@ -35,11 +45,12 @@ onMounted(() => {
     :modules="[Autoplay]"
     :speed="1000"
     :loop="true"
-    :autoplay="{ delay: 10000, disableOnInteraction: false }"
+    :autoplay="{ delay: 15000, disableOnInteraction: false }"
     pagination
     navigation
   >
     <SwiperSlide><LegendUser :users="legendUsers"/></SwiperSlide>
     <SwiperSlide><DiamondUser :users="diamondUsers"/></SwiperSlide>
+
   </Swiper>
 </template>
