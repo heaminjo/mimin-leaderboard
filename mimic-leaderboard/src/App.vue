@@ -11,13 +11,16 @@ import axios from 'axios';
 import { onMounted, ref } from 'vue';
 
 
-const API = 'http://localhost:48081/api'
+let baseURL = 'http://localhost:48081/api'
+
+if (import.meta.env.NODE_ENV === 'production')
+  baseURL = '/api/'
 
 const legendUsers = ref<User[]>([])
 const diamondUsers = ref<User[]>([])
 
 const fetchLeaderBoard = async () => {
-  await axios.get(`${API}/mscore/ranking`,{
+  await axios.get(`${baseURL}/mscore/ranking`,{
     params: {
       page: 0,
       size: 25,
@@ -25,12 +28,8 @@ const fetchLeaderBoard = async () => {
     }}
   )
   .then(res => {
-    console.log(res.data.list)
-
     legendUsers.value = res.data.list.filter((user: any) => user.tier === 'LEGEND')
     diamondUsers.value = res.data.list.filter((user: any) => user.tier === 'DIAMOND')
-
-    console.log(legendUsers)
   })
 }
 
