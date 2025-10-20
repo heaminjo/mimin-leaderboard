@@ -4,24 +4,25 @@ import type { User } from './data';
 const props = defineProps<{
   user: User
 }>()
+
 </script>
 
 <template>
     <section>
         <div class="ranking">
             <div class="d-rank">
-                <span><b>{{ user.ranking }}</b>th</span>
+                <span><b>{{ props.user.ranking }}</b>th</span>
             </div>
             <div class="d-tier">
-                <span>{{ user.tier }}</span>
+                <span>{{ props.user.tier }}</span>
             </div>
         </div>
         <div class="info">
             <div class="d-nickname">
-                <span>{{ user.nickname }}</span>
+                <span>{{ props.user.nickname }}</span>
             </div>
             <div class="d-mscore">
-                <span>{{ user.mscore }}</span>
+                <span>{{ props.user.mscore }}</span>
             </div>
         </div>
     </section>

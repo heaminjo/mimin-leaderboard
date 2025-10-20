@@ -8,7 +8,6 @@ import mimicSymbol1 from '../../public/심볼형_1.png'
 import mimicSymbol2 from '../../public/Group 192.png'
 
 import type { User } from './data';
-import MscoreCard from './MscoreCard.vue'
 
 const props = defineProps<{
   user: User
@@ -27,15 +26,15 @@ const rankImg = [rank01, rank02, rank03, rank04, rank05]
             <div class="profile">
                 <img :src="mimicSymbol1" alt="">
                 <div class="tier">
-                    <span>{{ user.tier }}</span>
+                    <span>{{ props.user.tier }}</span>
                 </div>
             </div>
             <div class="nickname">
-                <span>{{ user.nickname }}</span>
+                <span>{{ props.user.nickname }}</span>
             </div>
             <div class="mscore">
                 <span class="label">MSCORE</span>
-                <span class="value">{{user.mscore}}</span>
+                <span class="value">{{ props.user.mscore}}</span>
             </div>
             <div class="symbol">
                 <img :src="mimicSymbol2" alt="">

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
 import diamondLogo from '../../public/15302fa316a3c41fa058ac5bbb2b79f7064e0718.png'
 import DiamondCard from '../components/DiamondCard.vue';
 import type { User } from '../components/data';

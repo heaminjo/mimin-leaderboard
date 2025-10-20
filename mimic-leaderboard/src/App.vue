@@ -2,13 +2,10 @@
 import DiamondUser from './pages/DiamondUser.vue';
 import LegendUser from './pages/LegendUser.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
 import { Autoplay } from 'swiper/modules'
-import { User } from './data';
 import axios from 'axios';
 import { onMounted, ref } from 'vue';
+import type { User } from './components/data';
 
 
 let baseURL = 'http://localhost:48081/api'
