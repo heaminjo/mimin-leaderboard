@@ -5,6 +5,9 @@ import mimicSymbol from '../../public/심볼형_1.png'
 import mimicLogo from '../../public/기본형_1.png'
 import legendLogo from '../../public/b57d10d842cb6fe89e19df65bbfd20506aecf9c9.png'
 
+const props = defineProps<{
+  users: User[]
+}>()
 
 const data = [
     {
@@ -198,6 +201,6 @@ const data = [
   .legend-footer img{
     width: 100px;
     height: auto;
-    margin-top: 30px;
+    margin-top: 70px;
   }
 </style>

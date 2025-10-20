@@ -1,7 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { onMounted } from 'vue';
 import diamondLogo from '../../public/15302fa316a3c41fa058ac5bbb2b79f7064e0718.png'
 import DiamondCard from '../components/DiamondCard.vue';
+import type { User } from '../components/data';
+
+const props = defineProps<{
+  users: User[]
+}>()
+
 const data = [
     {
             "accountId": "8sla79r554",
@@ -164,7 +170,7 @@ const data = [
 </script>
 
 <template>
-    <div class="diamond-container">
+<div class="diamond-container">
   <header class="diamond-header">
     <div class="diamond-title">
       <img id="diamond-logo" :src="diamondLogo" alt="DIAMOND 로고">
@@ -181,9 +187,6 @@ const data = [
     </div>
   </div>
   </main>
-  <footer>
-    <img :src="mimicSymbol" alt="">
-  </footer>
 </div>
 </template>
 
