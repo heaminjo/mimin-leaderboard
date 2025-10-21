@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay } from 'swiper/modules'
 import axios from 'axios';
 import 'swiper/css';
-import { onMounted, ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import type { User } from './components/data';
 
 
@@ -31,8 +31,18 @@ const fetchLeaderBoard = async () => {
   })
 }
 
+let intervalId: ReturnType<typeof setInterval> | null = null
+
 onMounted(() => {
-  fetchLeaderBoard()
+  fetchLeaderBoard() // 최초 1회 실행
+
+  intervalId = setInterval(() => {
+    fetchLeaderBoard()
+  }, 600_000)
+})
+
+onUnmounted(() => {
+  if (intervalId) clearInterval(intervalId)
 })
 </script>
 
