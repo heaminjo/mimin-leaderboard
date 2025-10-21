@@ -4,6 +4,7 @@ import LegendUser from './pages/LegendUser.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay } from 'swiper/modules'
 import axios from 'axios';
+import 'swiper/css';
 import { onMounted, ref } from 'vue';
 import type { User } from './components/data';
 
