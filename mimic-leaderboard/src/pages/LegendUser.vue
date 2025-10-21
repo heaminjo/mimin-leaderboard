@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { User } from '../components/data';
 import LegendCard from '../components/LegendCard.vue';
-import mimicSymbol from '../../public/심볼형_1.png'
-import mimicLogo from '../../public/기본형_1.png'
+import mimicSymbol from '../../public/symbol.png'
+import mimicLogo from '../../public/mimicLogo.png'
 import legendLogo from '../../public/b57d10d842cb6fe89e19df65bbfd20506aecf9c9.png'
 
 const props = defineProps<{

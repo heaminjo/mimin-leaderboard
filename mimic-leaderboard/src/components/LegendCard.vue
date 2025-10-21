@@ -4,7 +4,7 @@ import rank02 from '../../public/a05934fad142ae9b551115892d6bf5172fb5f3c6.png'
 import rank03 from '../../public/5fbb33a9a4fe7c031a7784bc40745ccd7e9b25a9.png'
 import rank04 from '../../public/ddc27bc62bbefd059bc8bfc128c9baaf17f3b3e3.png'
 import rank05 from '../../public/73793b3af47789a5456e2357f5844cdc7d42de1b.png'
-import mimicSymbol1 from '../../public/심볼형_1.png'
+import mimicSymbol1 from '../../public/symbol.png'
 import mimicSymbol2 from '../../public/Group 192.png'
 
 import type { User } from './data';
